@@ -1,0 +1,39 @@
+-- sentinel.hcl --
+global "subject" {
+  value = {
+    now = {
+      day = 31
+    }
+  }
+}
+
+module "subject" {
+  source = "modules/subject.sentinel"
+}
+
+module "module_subject" {
+  source = "modules/subject.sentinel"
+}
+
+global "global_subject" {
+  value = {
+    now = {
+      day = 31
+    }
+  }
+}
+
+param "subject" {
+  value = "bar"
+}
+
+policy "subject" {
+  source = "subject.sentinel"
+}
+
+-- lint-config.txt --
+-- issues.txt --
+(0:0-0:16) [Related] (24:0-24:15): param 'subject' definition
+(0:0-0:16) [Related] (28:0-28:16): policy 'subject' definition
+(0:0-0:16) [Related] (8:0-8:16): module 'subject' definition
+(0:0-0:16) [Warning] Lint/DuplicateName: Block uses a duplicate name

@@ -1,0 +1,77 @@
+-- sentinel.hcl --
+# Bad names - v0.19.0
+
+import "plugin" "base64" {
+  source = "foo"
+}
+
+import "plugin" "decimal" {
+  source = "foo"
+}
+
+import "plugin" "http" {
+  source = "foo"
+}
+
+import "plugin" "json" {
+  source = "foo"
+}
+
+import "plugin" "runtime" {
+  source = "foo"
+}
+
+import "plugin" "sockaddr" {
+  source = "foo"
+}
+
+import "plugin" "strings" {
+  source = "foo"
+}
+
+import "plugin" "time" {
+  source = "foo"
+}
+
+import "plugin" "types" {
+  source = "foo"
+}
+
+import "plugin" "units" {
+  source = "foo"
+}
+
+import "plugin" "version" {
+  source = "foo"
+}
+
+# Bad names - v0.26.0
+
+import "plugin" "collection" {
+  source = "foo"
+}
+
+import "plugin" "collection/maps" {
+  source = "foo"
+}
+
+import "plugin" "collection/lists" {
+  source = "foo"
+}
+
+-- lint-config.txt --
+-- issues.txt --
+(10:0-10:22) [Error] Lint/ConflictingName: Block uses a conflicting name
+(14:0-14:22) [Error] Lint/ConflictingName: Block uses a conflicting name
+(18:0-18:25) [Error] Lint/ConflictingName: Block uses a conflicting name
+(22:0-22:26) [Error] Lint/ConflictingName: Block uses a conflicting name
+(26:0-26:25) [Error] Lint/ConflictingName: Block uses a conflicting name
+(2:0-2:24) [Error] Lint/ConflictingName: Block uses a conflicting name
+(30:0-30:22) [Error] Lint/ConflictingName: Block uses a conflicting name
+(34:0-34:23) [Error] Lint/ConflictingName: Block uses a conflicting name
+(38:0-38:23) [Error] Lint/ConflictingName: Block uses a conflicting name
+(42:0-42:25) [Error] Lint/ConflictingName: Block uses a conflicting name
+(48:0-48:28) [Warning] Lint/ConflictingName: Block uses a conflicting name
+(52:0-52:33) [Warning] Lint/ConflictingName: Block uses a conflicting name
+(56:0-56:34) [Warning] Lint/ConflictingName: Block uses a conflicting name
+(6:0-6:25) [Error] Lint/ConflictingName: Block uses a conflicting name

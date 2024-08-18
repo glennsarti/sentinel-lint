@@ -1,0 +1,50 @@
+-- sentinel.hcl --
+import "plugin" "subject" {
+  source = "/path/to/sentinel-import-time"
+  config = { "fixed_time": 1504155600 }
+}
+
+global "subject" {
+  value = {
+    now = {
+      day = 31
+    }
+  }
+}
+
+import "module" "module_subject" {
+  source = "modules/subject.sentinel"
+}
+
+import "plugin" "import_subject" {
+  source = "/path/to/sentinel-import-time"
+  config = { "fixed_time": 1504155600 }
+}
+
+global "global_subject" {
+  value = {
+    now = {
+      day = 31
+    }
+  }
+}
+
+import "static" "static_subject" {
+  source = "./data/people.json"
+  format = "json"
+}
+
+param "subject" {
+  value = "bar"
+}
+
+policy "subject" {
+  source = "subject.sentinel"
+}
+
+-- lint-config.txt --
+-- issues.txt --
+(0:0-0:25) [Related] (35:0-35:15): param 'subject' definition
+(0:0-0:25) [Related] (39:0-39:16): policy 'subject' definition
+(0:0-0:25) [Related] (5:0-5:16): global 'subject' definition
+(0:0-0:25) [Warning] Lint/DuplicateName: Block uses a duplicate name

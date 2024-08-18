@@ -1,0 +1,91 @@
+-- sentinel.hcl --
+# Bad names - v0.19.0
+
+import "static" "base64" {
+  source = "foo.json"
+  format = "json"
+}
+
+import "static" "decimal" {
+  source = "foo.json"
+  format = "json"
+}
+
+import "static" "http" {
+  source = "foo.json"
+  format = "json"
+}
+
+import "static" "json" {
+  source = "foo.json"
+  format = "json"
+}
+
+import "static" "runtime" {
+  source = "foo.json"
+  format = "json"
+}
+
+import "static" "sockaddr" {
+  source = "foo.json"
+  format = "json"
+}
+
+import "static" "strings" {
+  source = "foo.json"
+  format = "json"
+}
+
+import "static" "time" {
+  source = "foo.json"
+  format = "json"
+}
+
+import "static" "types" {
+  source = "foo.json"
+  format = "json"
+}
+
+import "static" "units" {
+  source = "foo.json"
+  format = "json"
+}
+
+import "static" "version" {
+  source = "foo.json"
+  format = "json"
+}
+
+# Bad names - v0.26.0
+
+import "static" "collection" {
+  source = "foo.json"
+  format = "json"
+}
+
+import "static" "collection/maps" {
+  source = "foo.json"
+  format = "json"
+}
+
+import "static" "collection/lists" {
+  source = "foo.json"
+  format = "json"
+}
+
+-- lint-config.txt --
+-- issues.txt --
+(12:0-12:22) [Error] Lint/ConflictingName: Block uses a conflicting name
+(17:0-17:22) [Error] Lint/ConflictingName: Block uses a conflicting name
+(22:0-22:25) [Error] Lint/ConflictingName: Block uses a conflicting name
+(27:0-27:26) [Error] Lint/ConflictingName: Block uses a conflicting name
+(2:0-2:24) [Error] Lint/ConflictingName: Block uses a conflicting name
+(32:0-32:25) [Error] Lint/ConflictingName: Block uses a conflicting name
+(37:0-37:22) [Error] Lint/ConflictingName: Block uses a conflicting name
+(42:0-42:23) [Error] Lint/ConflictingName: Block uses a conflicting name
+(47:0-47:23) [Error] Lint/ConflictingName: Block uses a conflicting name
+(52:0-52:25) [Error] Lint/ConflictingName: Block uses a conflicting name
+(59:0-59:28) [Warning] Lint/ConflictingName: Block uses a conflicting name
+(64:0-64:33) [Warning] Lint/ConflictingName: Block uses a conflicting name
+(69:0-69:34) [Warning] Lint/ConflictingName: Block uses a conflicting name
+(7:0-7:25) [Error] Lint/ConflictingName: Block uses a conflicting name

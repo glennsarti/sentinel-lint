@@ -1,0 +1,9 @@
+-- sentinel.hcl --
+# V2 Imports aren't supported in this version of sentinel
+
+import "module" "base64" {
+  source = "foo"
+}
+-- lint-config.txt --
+-- issues.txt --
+(2:16-2:24) [Error] Syntax/Error: Extraneous label for import

@@ -1,0 +1,11 @@
+-- sentinel.hcl --
+# V2 Imports aren't supported in this version of sentinel
+
+import "static" "base64" {
+  source = "foo.json"
+  format = "json"
+}
+
+-- lint-config.txt --
+-- issues.txt --
+(2:16-2:24) [Error] Syntax/Error: Extraneous label for import
