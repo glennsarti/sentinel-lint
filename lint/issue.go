@@ -6,7 +6,14 @@ import (
 
 type Issues []*Issue
 
-// TODO : JSON serialise
+func (i Issues) HasErrors() bool {
+	for _, issue := range i {
+		if issue != nil && issue.Severity == Error {
+			return true
+		}
+	}
+	return false
+}
 
 type Issue struct {
 	Severity SeverityLevel

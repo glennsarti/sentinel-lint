@@ -41,7 +41,7 @@ func (w *walker) visitAssignStatement(n *ast.AssignStatement) {
 	w.issues = append(w.issues, &lint.Issue{
 		RuleId:   assignmentsAfterRulesRuleID,
 		Severity: lint.Warning,
-		Summary:  "Avoid Assignment after rules",
+		Summary:  "Avoid assignment after rules",
 		Detail:   "Avoid assignments after rules are defined as it may cause confusion due to rules being lazily evaluated.",
 		Range:    &r,
 		Related: &[]lint.RelatedInformation{

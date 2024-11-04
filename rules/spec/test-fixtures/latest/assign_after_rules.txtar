@@ -7,4 +7,4 @@ x = 2
 -- lint-config.txt --
 -- issues.txt --
 (4:0-4:1) [Related] (2:0-2:4): First rule
-(4:0-4:1) [Warning] Lint/AssignmentsAfterRules: Avoid Assignment after rules
+(4:0-4:1) [Warning] Lint/AssignmentsAfterRules: Avoid assignment after rules
