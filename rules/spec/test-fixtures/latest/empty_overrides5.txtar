@@ -1,0 +1,14 @@
+-- sentinel.hcl --
+test {
+  rules = {
+    main = false
+  }
+}
+
+-- override.hcl --
+# This is a bit strange because test files can't be overriden
+test {}
+
+-- lint-config.txt --
+-- issues.txt --
+(1:0-1:4) [Information] Lint/UselessOverride: Block has no effect

@@ -1,0 +1,13 @@
+-- override.hcl --
+
+# Even though these are empty blocks, they
+# won't raise a lint issue because overrides
+# aren't supported.
+mock "mock_thing" {}
+param "param_thing" {}
+policy "policy_thing" {}
+
+test {}
+
+-- lint-config.txt --
+-- issues.txt --

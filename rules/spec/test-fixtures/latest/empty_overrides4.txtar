@@ -1,0 +1,17 @@
+-- sentinel.hcl --
+import "importv1_thing" {
+  path = "some_binary"
+}
+
+module "modulev1_thing" {
+  source = "../modules/local.sentinel"
+}
+-- override.hcl --
+import "importv1_thing" {}
+
+module "modulev1_thing" {}
+
+-- lint-config.txt --
+-- issues.txt --
+(0:0-0:23) [Information] Lint/UselessOverride: Block has no effect
+(2:0-2:23) [Information] Lint/UselessOverride: Block has no effect

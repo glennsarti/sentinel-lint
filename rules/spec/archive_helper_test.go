@@ -95,6 +95,7 @@ func (pa *parsedArchive) Write(filepath string) error {
 
 const policyFilename = "policy.sentinel"
 const primaryConfigFilename = "sentinel.hcl"
+const overrideConfigFilename = "override.hcl"
 
 func extractSourceFile(files map[string]txtar.File, sentinelVersion string) (lint.File, lint.Issues, error) {
 	// Standard Policy File
@@ -118,11 +119,42 @@ func extractSourceFile(files map[string]txtar.File, sentinelVersion string) (lin
 		if err != nil {
 			return nil, nil, err
 		}
+
+		// Override config file
+		if arcFile, ok := files[overrideConfigFilename]; ok {
+			override, issues, err := parsing.ParseSentinelConfigFile(sentinelVersion, overrideConfigFilename, arcFile.Data)
+			if err != nil {
+				return nil, nil, err
+			}
+			file := lint.ConfigOverrideFile{
+				ConfigFile:  override,
+				PrimaryFile: f,
+				FilePath:    primaryConfigFilename,
+			}
+
+			return file, issues, nil
+		}
+
 		file := lint.ConfigPrimaryFile{
 			ConfigFile:         f,
 			ResolvedConfigFile: f,
 			FilePath:           primaryConfigFilename,
 		}
+
+		return file, issues, nil
+	}
+
+	// Only override config file (Unusal but possible)
+	if arcFile, ok := files[overrideConfigFilename]; ok {
+		f, issues, err := parsing.ParseSentinelConfigFile(sentinelVersion, overrideConfigFilename, arcFile.Data)
+		if err != nil {
+			return nil, nil, err
+		}
+		file := lint.ConfigOverrideFile{
+			ConfigFile: f,
+			FilePath:   primaryConfigFilename,
+		}
+
 		return file, issues, nil
 	}
 

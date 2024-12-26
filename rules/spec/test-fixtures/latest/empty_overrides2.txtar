@@ -1,0 +1,10 @@
+-- override.hcl --
+
+module "modulev1_thing" {}
+
+import "importv1_thing" {}
+
+-- lint-config.txt --
+-- issues.txt --
+(1:0-1:23) [Information] Lint/UselessOverride: Block has no effect
+(3:0-3:23) [Information] Lint/UselessOverride: Block has no effect

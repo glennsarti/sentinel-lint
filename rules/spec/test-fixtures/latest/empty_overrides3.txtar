@@ -1,0 +1,62 @@
+-- sentinel.hcl --
+
+sentinel {
+  features = {
+    something = true
+  }
+}
+
+global "global_thing" {
+  value = null
+}
+
+import "module" "modulev2_thing" {
+  source = "../something.sentinel"
+}
+
+import "plugin" "pluginv2_thing" {
+  source = "some_binary"
+}
+
+import "static" "staticv2_thing" {
+  source = "somewhere.json"
+  format = "json"
+}
+
+mock "mock_thing" {
+  data = {}
+}
+
+param "param_thing" {
+  value = "primary"
+}
+
+policy "policy_thing" {
+  source = "./policies/policy1/policy1.sentinel"
+}
+
+-- override.hcl --
+sentinel {}
+
+global "global_thing" {}
+
+import "module" "modulev2_thing" {}
+import "plugin" "pluginv2_thing" {}
+import "static" "staticv2_thing" {}
+
+mock "mock_thing" {}
+param "param_thing" {}
+policy "policy_thing" {}
+
+# test {}
+
+-- lint-config.txt --
+-- issues.txt --
+(0:0-0:8) [Information] Lint/UselessOverride: Block has no effect
+(10:0-10:21) [Information] Lint/UselessOverride: Block has no effect
+(2:0-2:21) [Information] Lint/UselessOverride: Block has no effect
+(4:0-4:32) [Information] Lint/UselessOverride: Block has no effect
+(5:0-5:32) [Information] Lint/UselessOverride: Block has no effect
+(6:0-6:32) [Information] Lint/UselessOverride: Block has no effect
+(8:0-8:17) [Information] Lint/UselessOverride: Block has no effect
+(9:0-9:19) [Information] Lint/UselessOverride: Block has no effect
