@@ -33,7 +33,7 @@ policy "subject" {
 
 -- lint-config.txt --
 -- issues.txt --
-(0:0-0:16) [Related] (24:0-24:15): param 'subject' definition
-(0:0-0:16) [Related] (28:0-28:16): policy 'subject' definition
-(0:0-0:16) [Related] (8:0-8:16): module 'subject' definition
-(0:0-0:16) [Warning] Lint/DuplicateName: Block uses a duplicate name
+(sentinel.hcl:0:0-0:16) [Related] (sentinel.hcl:24:0-24:15): param 'subject' definition
+(sentinel.hcl:0:0-0:16) [Related] (sentinel.hcl:28:0-28:16): policy 'subject' definition
+(sentinel.hcl:0:0-0:16) [Related] (sentinel.hcl:8:0-8:16): module 'subject' definition
+(sentinel.hcl:0:0-0:16) [Warning] Lint/DuplicateName: Block uses a duplicate name

@@ -15,12 +15,12 @@ test {}
 
 -- lint-config.txt --
 -- issues.txt --
-(0:0-0:8) [Information] Lint/UselessOverride: Block has no effect
-(10:0-10:21) [Information] Lint/UselessOverride: Block has no effect
-(12:0-12:4) [Information] Lint/UselessOverride: Block has no effect
-(2:0-2:21) [Information] Lint/UselessOverride: Block has no effect
-(4:0-4:26) [Information] Lint/UselessOverride: Block has no effect
-(5:0-5:26) [Information] Lint/UselessOverride: Block has no effect
-(6:0-6:26) [Information] Lint/UselessOverride: Block has no effect
-(8:0-8:17) [Information] Lint/UselessOverride: Block has no effect
-(9:0-9:19) [Information] Lint/UselessOverride: Block has no effect
+(override.hcl:0:0-0:8) [Information] Lint/UselessOverride: Block has no effect
+(override.hcl:10:0-10:21) [Information] Lint/UselessOverride: Block has no effect
+(override.hcl:12:0-12:4) [Information] Lint/UselessOverride: Block has no effect
+(override.hcl:2:0-2:21) [Information] Lint/UselessOverride: Block has no effect
+(override.hcl:4:0-4:26) [Information] Lint/UselessOverride: Block has no effect
+(override.hcl:5:0-5:26) [Information] Lint/UselessOverride: Block has no effect
+(override.hcl:6:0-6:26) [Information] Lint/UselessOverride: Block has no effect
+(override.hcl:8:0-8:17) [Information] Lint/UselessOverride: Block has no effect
+(override.hcl:9:0-9:19) [Information] Lint/UselessOverride: Block has no effect

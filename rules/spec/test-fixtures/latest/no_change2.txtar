@@ -1,0 +1,41 @@
+-- sentinel.hcl --
+module "module1" {
+  source = "../modules/local.sentinel"
+}
+
+import "import1" {
+  path = "some_binary"
+
+  args = ["-arg1", "-arg2"]
+
+  env = ["NAME=value"]
+
+  config = {
+    string1 = "string1"
+    number1 = 100
+  }
+}
+-- override.hcl --
+module "module1" {
+  source = "../modules/local.sentinel"
+}
+
+import "import1" {
+  path = "some_binary"
+
+  args = ["-arg1", "-arg2"]
+
+  env = ["NAME=value"]
+
+  config = {
+    string1 = "string1"
+    number1 = 100
+  }
+}
+-- lint-config.txt --
+-- issues.txt --
+(override.hcl:11:2-14:3) [Information] Lint/UselessOverride: Attribute has no effect
+(override.hcl:1:2-1:38) [Information] Lint/UselessOverride: Attribute has no effect
+(override.hcl:5:2-5:22) [Information] Lint/UselessOverride: Attribute has no effect
+(override.hcl:7:2-7:27) [Information] Lint/UselessOverride: Attribute has no effect
+(override.hcl:9:2-9:22) [Information] Lint/UselessOverride: Attribute has no effect

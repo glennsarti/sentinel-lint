@@ -257,5 +257,11 @@ func rangeToString(r *position.SourceRange) string {
 	if r == nil {
 		return "NIL Range"
 	}
-	return fmt.Sprintf("%d:%d-%d:%d", r.Start.Line, r.Start.Column, r.End.Line, r.End.Column)
+	return fmt.Sprintf("%s:%d:%d-%d:%d",
+		r.Filename,
+		r.Start.Line,
+		r.Start.Column,
+		r.End.Line,
+		r.End.Column,
+	)
 }
