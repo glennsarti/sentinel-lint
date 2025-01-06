@@ -78,11 +78,14 @@ func (r sentinelConfigOverridesRuleSet) runSentinelOverrideFile(f lint.ConfigOve
 		return issues, nil
 	}
 
-	// TODO Check for overrides with the same value
+	r.lintNoChanges(*f.PrimaryFile, *f.ConfigFile, func(i *lint.Issue) {
+		issues = append(issues, i)
+	})
 
 	return issues, nil
 }
 
+// Check for empty blocks
 func (r sentinelConfigOverridesRuleSet) checkEmptyBlocks(f ast.File, addFunc issueAdder) {
 	// Globals
 	for _, blk := range f.Globals {
@@ -152,7 +155,7 @@ func (r sentinelConfigOverridesRuleSet) checkEmptyBlocks(f ast.File, addFunc iss
 	}
 
 	// Test
-	if f.Test != nil && f.Test.TestRange != nil {
+	if f.Test != nil && f.Test.RulesRange == nil {
 		r.emptyBlockViolation(f.Test, addFunc)
 	}
 }
