@@ -6,5 +6,5 @@ main = rule { 1 == 2 }
 x = 2
 -- lint-config.txt --
 -- issues.txt --
-(4:0-4:1) [Related] (2:0-2:4): First rule
-(4:0-4:1) [Warning] Lint/AssignmentsAfterRules: Avoid assignment after rules
+(policy.sentinel:4:0-4:1) [Related] (policy.sentinel:2:0-2:4): First rule
+(policy.sentinel:4:0-4:1) [Warning] Lint/AssignmentsAfterRules: Avoid assignment after rules

@@ -1,0 +1,144 @@
+-- sentinel.hcl --
+policy "policy1" {
+  source            = "foo.sentinel"
+  enforcement_level = "hard-mandatory"
+
+  params = {
+    "string" = "a_value"
+  }
+}
+
+mock "mock1" {
+  module {
+    source = "mock.sentinel"
+  }
+
+  data = {
+    string1 = "value1"
+  }
+}
+
+global "global1" {
+  value = "value"
+}
+
+param "param1" {
+  value = "value"
+}
+
+sentinel {
+  features = {
+    some_feature = true
+  }
+}
+
+test {
+  rules = {
+    main = false
+  }
+}
+
+import "module" "module1" {
+  source = "../something.sentinel"
+}
+
+import "plugin" "plugin1" {
+  source = "some_binary"
+  args = ["-arg1", "-arg2"]
+
+  env = {
+    NAME = "value"
+  }
+
+  config = {
+    string1 = "string1"
+    number1 = 100
+  }
+}
+
+import "static" "static1" {
+  source = "somewhere.json"
+  format = "json"
+}
+
+-- override.hcl --
+policy "policy1" {
+  source            = "foo.sentinel"
+  enforcement_level = "hard-mandatory"
+
+  params = {
+    "string" = "a_value"
+  }
+}
+
+mock "mock1" {
+  module {
+    source = "mock.sentinel"
+  }
+
+  data = {
+    string1 = "value1"
+  }
+}
+
+global "global1" {
+  value = "value"
+}
+
+param "param1" {
+  value = "value"
+}
+
+sentinel {
+  features = {
+    some_feature = true
+  }
+}
+
+test {
+  rules = {
+    main = false
+  }
+}
+
+import "module" "module1" {
+  source = "../something.sentinel"
+}
+
+import "plugin" "plugin1" {
+  source = "some_binary"
+  args = ["-arg1", "-arg2"]
+
+  env = {
+    NAME = "value"
+  }
+
+  config = {
+    string1 = "string1"
+    number1 = 100
+  }
+}
+
+import "static" "static1" {
+  source = "somewhere.json"
+  format = "json"
+}
+
+-- lint-config.txt --
+-- issues.txt --
+(override.hcl:11:4-11:28) [Information] Lint/UselessOverride: Attribute has no effect
+(override.hcl:14:2-16:3) [Information] Lint/UselessOverride: Attribute has no effect
+(override.hcl:1:2-1:36) [Information] Lint/UselessOverride: Attribute has no effect
+(override.hcl:20:10-20:17) [Information] Lint/UselessOverride: Attribute has no effect
+(override.hcl:24:2-24:17) [Information] Lint/UselessOverride: Attribute has no effect
+(override.hcl:29:4-29:23) [Information] Lint/UselessOverride: Attribute has no effect
+(override.hcl:2:2-2:38) [Information] Lint/UselessOverride: Attribute has no effect
+(override.hcl:33:0-33:4) [Warning] Lint/UselessOverride: Block has no effect
+(override.hcl:40:2-40:34) [Information] Lint/UselessOverride: Attribute has no effect
+(override.hcl:44:2-44:24) [Information] Lint/UselessOverride: Attribute has no effect
+(override.hcl:45:2-45:27) [Information] Lint/UselessOverride: Attribute has no effect
+(override.hcl:47:2-49:3) [Information] Lint/UselessOverride: Attribute has no effect
+(override.hcl:4:2-6:3) [Information] Lint/UselessOverride: Attribute has no effect
+(override.hcl:51:2-54:3) [Information] Lint/UselessOverride: Attribute has no effect
+(override.hcl:58:2-58:27) [Information] Lint/UselessOverride: Attribute has no effect
+(override.hcl:59:2-59:17) [Information] Lint/UselessOverride: Attribute has no effect

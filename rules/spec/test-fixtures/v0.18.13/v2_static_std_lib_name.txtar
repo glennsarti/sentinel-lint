@@ -8,4 +8,4 @@ import "static" "base64" {
 
 -- lint-config.txt --
 -- issues.txt --
-(2:16-2:24) [Error] Syntax/Error: Extraneous label for import
+(sentinel.hcl:2:16-2:24) [Error] Syntax/Error: Extraneous label for import

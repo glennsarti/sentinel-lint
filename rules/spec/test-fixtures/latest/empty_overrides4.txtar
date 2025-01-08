@@ -13,5 +13,5 @@ module "modulev1_thing" {}
 
 -- lint-config.txt --
 -- issues.txt --
-(0:0-0:23) [Information] Lint/UselessOverride: Block has no effect
-(2:0-2:23) [Information] Lint/UselessOverride: Block has no effect
+(override.hcl:0:0-0:23) [Information] Lint/UselessOverride: Block has no effect
+(override.hcl:2:0-2:23) [Information] Lint/UselessOverride: Block has no effect

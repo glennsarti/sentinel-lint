@@ -11,4 +11,5 @@ test {}
 
 -- lint-config.txt --
 -- issues.txt --
-(1:0-1:4) [Information] Lint/UselessOverride: Block has no effect
+(override.hcl:1:0-1:4) [Information] Lint/UselessOverride: Block has no effect
+(override.hcl:1:0-1:4) [Warning] Lint/UselessOverride: Block has no effect

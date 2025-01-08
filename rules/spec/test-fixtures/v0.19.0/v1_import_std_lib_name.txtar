@@ -61,17 +61,17 @@ import "collection/lists" {
 
 -- lint-config.txt --
 -- issues.txt --
-(10:0-10:13) [Error] Lint/ConflictingName: Block uses a conflicting name
-(14:0-14:13) [Error] Lint/ConflictingName: Block uses a conflicting name
-(18:0-18:16) [Error] Lint/ConflictingName: Block uses a conflicting name
-(22:0-22:17) [Error] Lint/ConflictingName: Block uses a conflicting name
-(26:0-26:16) [Error] Lint/ConflictingName: Block uses a conflicting name
-(2:0-2:15) [Error] Lint/ConflictingName: Block uses a conflicting name
-(30:0-30:13) [Error] Lint/ConflictingName: Block uses a conflicting name
-(34:0-34:14) [Error] Lint/ConflictingName: Block uses a conflicting name
-(38:0-38:14) [Error] Lint/ConflictingName: Block uses a conflicting name
-(42:0-42:16) [Error] Lint/ConflictingName: Block uses a conflicting name
-(48:0-48:19) [Warning] Lint/ConflictingName: Block uses a conflicting name
-(52:0-52:24) [Warning] Lint/ConflictingName: Block uses a conflicting name
-(56:0-56:25) [Warning] Lint/ConflictingName: Block uses a conflicting name
-(6:0-6:16) [Error] Lint/ConflictingName: Block uses a conflicting name
+(sentinel.hcl:10:0-10:13) [Error] Lint/ConflictingName: Block uses a conflicting name
+(sentinel.hcl:14:0-14:13) [Error] Lint/ConflictingName: Block uses a conflicting name
+(sentinel.hcl:18:0-18:16) [Error] Lint/ConflictingName: Block uses a conflicting name
+(sentinel.hcl:22:0-22:17) [Error] Lint/ConflictingName: Block uses a conflicting name
+(sentinel.hcl:26:0-26:16) [Error] Lint/ConflictingName: Block uses a conflicting name
+(sentinel.hcl:2:0-2:15) [Error] Lint/ConflictingName: Block uses a conflicting name
+(sentinel.hcl:30:0-30:13) [Error] Lint/ConflictingName: Block uses a conflicting name
+(sentinel.hcl:34:0-34:14) [Error] Lint/ConflictingName: Block uses a conflicting name
+(sentinel.hcl:38:0-38:14) [Error] Lint/ConflictingName: Block uses a conflicting name
+(sentinel.hcl:42:0-42:16) [Error] Lint/ConflictingName: Block uses a conflicting name
+(sentinel.hcl:48:0-48:19) [Warning] Lint/ConflictingName: Block uses a conflicting name
+(sentinel.hcl:52:0-52:24) [Warning] Lint/ConflictingName: Block uses a conflicting name
+(sentinel.hcl:56:0-56:25) [Warning] Lint/ConflictingName: Block uses a conflicting name
+(sentinel.hcl:6:0-6:16) [Error] Lint/ConflictingName: Block uses a conflicting name
