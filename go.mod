@@ -1,11 +1,12 @@
 module github.com/glennsarti/sentinel-lint
 
 go 1.22.5
+toolchain go1.24.1
 
 require (
 	github.com/glennsarti/sentinel-parser v0.0.1
 	github.com/google/go-cmp v0.6.0
-	golang.org/x/tools v0.26.0
+	golang.org/x/tools v0.31.0
 )
 
 require (
@@ -14,7 +15,7 @@ require (
 	github.com/hashicorp/hcl/v2 v2.22.0 // indirect
 	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
 	github.com/zclconf/go-cty v1.15.0 // indirect
-	golang.org/x/mod v0.21.0 // indirect
-	golang.org/x/sync v0.8.0 // indirect
+	golang.org/x/mod v0.24.0 // indirect
+	golang.org/x/sync v0.12.0 // indirect
 	golang.org/x/text v0.16.0 // indirect
 )
