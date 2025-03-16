@@ -1,7 +1,6 @@
 module github.com/glennsarti/sentinel-lint
 
-go 1.22.5
-toolchain go1.24.1
+go 1.24.1
 
 require (
 	github.com/glennsarti/sentinel-parser v0.0.1
