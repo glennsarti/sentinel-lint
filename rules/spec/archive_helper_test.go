@@ -29,13 +29,15 @@ func parseTxtarArchive(filePath string) (*parsedArchive, error) {
 	if err != nil {
 		return nil, err
 	}
-	defer f.Close()
+	defer f.Close() //nolint:errcheck
 
 	contents, err := io.ReadAll(f)
 	if err != nil {
 		return nil, err
 	}
-	f.Close()
+	if err := f.Close(); err != nil {
+		return nil, err
+	}
 
 	arc := &parsedArchive{
 		SourceFile: make(map[string]txtar.File, 0),
@@ -83,7 +85,7 @@ func (pa *parsedArchive) Write(filepath string) error {
 	if f, err := os.Create(filepath); err != nil {
 		return err
 	} else {
-		defer f.Close()
+		defer f.Close() //nolint:errcheck
 		if _, err = f.Write(txtar.Format(pa.raw)); err != nil {
 			return err
 		}

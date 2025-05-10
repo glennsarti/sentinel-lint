@@ -88,11 +88,11 @@ func createSpecFileFromSource(filename, parentPath, sentinelVersion string, t *t
 	archiveFilename := filename
 
 	if strings.HasSuffix(dstFilename, ".sentinel") {
-		dstFilename = strings.Replace(dstFilename, ".sentinel", ".txtar", -1)
+		dstFilename = strings.ReplaceAll(dstFilename, ".sentinel", ".txtar")
 		archiveFilename = policyFilename
 	}
 	if strings.HasSuffix(dstFilename, ".hcl") {
-		dstFilename = strings.Replace(dstFilename, ".hcl", ".txtar", -1)
+		dstFilename = strings.ReplaceAll(dstFilename, ".hcl", ".txtar")
 		archiveFilename = primaryConfigFilename
 	}
 
@@ -106,7 +106,9 @@ func createSpecFileFromSource(filename, parentPath, sentinelVersion string, t *t
 	if err != nil {
 		return err
 	}
-	f.Close()
+	if err := f.Close(); err != nil {
+		return err
+	}
 
 	// Must end in LF
 	if contents[len(contents)-1] != 10 {
