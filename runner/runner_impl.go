@@ -23,7 +23,7 @@ func NewRunner(config lint.Config, rulesets lint.RuleSetList, file lint.File) (l
 	if ok, ver := features.ValidateSentinelVersion(config.SentinelVersion); ok {
 		sentVersion = ver
 	} else {
-		return nil, fmt.Errorf("Sentinel version %q is not valid.", config.SentinelVersion)
+		return nil, fmt.Errorf("sentinel version %q is not valid", config.SentinelVersion)
 	}
 
 	return &runnerImpl{
